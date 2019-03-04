@@ -21,7 +21,7 @@ namespace c_lists
             // Use Add() again to add Pluto to the end of the list.
             planetList.Add("Pluto");
             // Now that all the planets are in the list, slice the list using GetRange() in order to extract the rocky planets into a new list called rockyPlanets. The rocky planets will remain in the original planets list.
-            List<string> rockyPlanets = planetList.GetRange(0,3);
+            List<string> rockyPlanets = planetList.GetRange(0,4);
             // Being good amateur astronomers, we know that Pluto is now a dwarf planet, so use the Remove() method to eliminate it from the end of planetList.
             planetList.Remove("Pluto");
                 foreach(string planet in planetList) {
@@ -42,12 +42,15 @@ namespace c_lists
                 Console.WriteLine();
 
             // Use a for loop to iterate over all numbers between 0 and numbers.Count - 1.
-            //    Inside the body of the for loop determine if the current loop index is contained inside of the numbers list. Print a message to the console indicating whether the index is in the list.
+            // Inside the body of the for loop determine if the current loop index is contained inside of the numbers list. Print a message to the console indicating whether the index is in the list.
 
                for(int i=0; i <= numbers.Count-1; i++) {
                    if (numbers.Contains(i)) {
-                       Console.WriteLine($"numbers list contains {i}");
-                   }else {Console.WriteLine($"numbers list does not contain {i}");
+                    //composite formatting
+                       Console.WriteLine("numbers list contains {0}", i );
+                    //string interpolation
+                   } else {
+                       Console.WriteLine($"numbers list does not contain {i}");
                    }
                }
 
